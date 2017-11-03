@@ -33,7 +33,7 @@ do_mounts(){
 }
 
 send_data(){
-    cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip | pv > ${bkdir}/rpiMon$SUFFIX_$NOW.tgz 
+    cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip | pv > ${bkdir}/$NOW_rpiMon$SUFFIX.tgz 
 # tee >(md5sum > /tmp/backup.md5);
 }
 

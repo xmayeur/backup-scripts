@@ -26,7 +26,7 @@ ssh mayeur.be@ssh.mayeur.be 'bash -s' << 'ENDSSH'
         SUFFIX=""
     fi
 
-   cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip > ${bkdir}/www.mayeur.be$SUFFIX_$NOW.tgz 
+   cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip > ${bkdir}/$NOW_www.mayeur.be$SUFFIX.tgz 
 
 ENDSSH
 
