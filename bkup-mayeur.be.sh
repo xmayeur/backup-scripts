@@ -3,7 +3,7 @@
 # script to perform the remote backup
 do_bkup() {
 # execute the next script remotely
-ssh mayeur.be@ssh.mayeur.be 'bash -s' << 'ENDSSH'
+ssh mayeur.be@ssh.mayeur.be 'bash -x -s' << 'ENDSSH'
 
     # set the directory to backup
     dir="/www/"
@@ -26,7 +26,7 @@ ssh mayeur.be@ssh.mayeur.be 'bash -s' << 'ENDSSH'
         SUFFIX=""
     fi
 
-   cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip > ${bkdir}/$NOW_www.mayeur.be$SUFFIX.tgz 
+   cd ${dir}; tar -g ${bkdir}/incr.snar ${LEV} -pcf - . | gzip > ${bkdir}/${NOW}_www.mayeur.be${SUFFIX}.tgz 
 
 ENDSSH
 
